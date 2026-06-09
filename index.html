@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Prof. Dr. Fedaei Mohamed El-Sayed Abbas | Consultant Nephrologist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --navy:#0a1628;--navy-mid:#112240;--navy-light:#1a3258;
+  --blue:#1e5fa8;--blue-light:#2d7dd2;--sky:#64a8d8;
+  --slate:#8da3b8;--slate-light:#b8ccd8;
+  --cream:#f4f7fb;--white:#ffffff;
+  --gold:#c8a96e;--gold-light:#e4c98a;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--navy);overflow-x:hidden;}
+#navbar{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 0;transition:all 0.4s ease;}
+#navbar.scrolled{background:rgba(10,22,40,0.96);backdrop-filter:blur(12px);box-shadow:0 2px 32px rgba(0,0,0,0.3);padding:14px 0;}
+.nav-link{font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.75);transition:color 0.2s;text-decoration:none;padding:4px 0;border-bottom:1px solid transparent;}
+.nav-link:hover{color:var(--gold-light);border-color:var(--gold-light);}
+#hero{min-height:100vh;background:radial-gradient(ellipse 80% 60% at 70% 50%,rgba(30,95,168,0.18) 0%,transparent 60%),radial-gradient(ellipse 60% 80% at 10% 80%,rgba(100,168,216,0.1) 0%,transparent 50%),linear-gradient(160deg,var(--navy) 0%,var(--navy-mid) 55%,#0d1e38 100%);display:flex;align-items:center;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 59px,rgba(255,255,255,0.022) 60px),repeating-linear-gradient(90deg,transparent,transparent 59px,rgba(255,255,255,0.022) 60px);pointer-events:none;}
+section{padding:96px 0;}
+section:nth-child(even){background:var(--cream);}
+.container{max-width:1200px;margin:0 auto;padding:0 32px;}
+.section-label{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue);font-weight:600;margin-bottom:12px;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.5vw,2.8rem);font-weight:700;line-height:1.2;color:var(--navy);}
+.section-title .italic{font-style:italic;color:var(--blue);}
+.section-rule{width:48px;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light));border-radius:2px;margin:20px 0 40px;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+.about-card{background:white;border-radius:8px;padding:28px;border:1px solid rgba(30,95,168,0.1);box-shadow:0 4px 24px rgba(10,22,40,0.06);}
+.about-card-icon{width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,var(--blue),var(--blue-light));display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+.about-card h4{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--navy);margin-bottom:8px;}
+.about-card p{font-size:0.875rem;color:#5a6e82;line-height:1.7;}
+.timeline-item{display:flex;gap:32px;position:relative;padding-bottom:40px;}
+.timeline-item:last-child{padding-bottom:0;}
+.timeline-left{display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:110px;}
+.timeline-dot{width:14px;height:14px;border-radius:50%;background:var(--blue);border:3px solid var(--cream);flex-shrink:0;position:relative;z-index:1;}
+.timeline-item.featured .timeline-dot{background:var(--gold);width:18px;height:18px;}
+.timeline-year{font-size:0.75rem;font-weight:600;color:var(--blue);letter-spacing:0.04em;margin-top:6px;text-align:center;line-height:1.4;}
+.timeline-line{width:2px;background:linear-gradient(to bottom,var(--blue-light),rgba(30,95,168,0.1));flex:1;margin-top:4px;}
+.timeline-tag{display:inline-block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;background:rgba(30,95,168,0.1);color:var(--blue);border-radius:4px;padding:3px 10px;margin-bottom:8px;}
+.timeline-item.featured .timeline-tag{background:rgba(200,169,110,0.12);color:var(--gold);}
+.timeline-body h3{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--navy);margin-bottom:6px;}
+.timeline-body p{font-size:0.88rem;color:#5a6e82;line-height:1.7;}
+.qual-card{background:white;border-radius:12px;padding:32px;border:1px solid rgba(30,95,168,0.08);box-shadow:0 4px 28px rgba(10,22,40,0.06);position:relative;overflow:hidden;transition:transform 0.25s,box-shadow 0.25s;}
+.qual-card:hover{transform:translateY(-4px);box-shadow:0 12px 48px rgba(10,22,40,0.1);}
+.qual-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--blue),var(--sky));}
+.qual-card.gold::before{background:linear-gradient(90deg,var(--gold),var(--gold-light));}
+.qual-card h3{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--navy);margin-bottom:6px;}
+.qual-card .institution{font-size:0.83rem;color:var(--blue);font-weight:600;}
+.qual-card .year{font-size:0.78rem;color:var(--slate);margin-top:4px;}
+.qual-card p{font-size:0.83rem;color:#5a6e82;margin-top:10px;line-height:1.6;}
+.distinction-badge{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:0.75rem;background:rgba(200,169,110,0.12);color:var(--gold);border-radius:100px;padding:4px 14px;border:1px solid rgba(200,169,110,0.25);}
+.book-card{background:var(--navy-mid);border-radius:12px;overflow:hidden;border:1px solid rgba(100,168,216,0.15);transition:transform 0.25s,box-shadow 0.25s;}
+.book-card:hover{transform:translateY(-4px);box-shadow:0 16px 56px rgba(0,0,0,0.3);}
+.book-body{padding:24px;}
+.book-body p{font-size:0.88rem;color:var(--slate-light);line-height:1.7;}
+.book-tag{display:inline-block;margin:4px 4px 0 0;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;background:rgba(30,95,168,0.25);color:var(--sky);border-radius:4px;padding:3px 10px;}
+.pub-item{padding:18px 22px;border-radius:8px;border-left:3px solid rgba(30,95,168,0.2);background:white;margin-bottom:10px;transition:all 0.2s;box-shadow:0 2px 10px rgba(10,22,40,0.04);}
+.pub-item:hover{border-left-color:var(--blue);transform:translateX(4px);}
+.pub-item.intl{border-left-color:var(--gold);}
+.pub-journal{font-size:0.72rem;color:var(--blue);font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:4px;}
+.pub-item.intl .pub-journal{color:var(--gold);}
+.pub-item h4{font-size:0.93rem;color:var(--navy);font-weight:500;line-height:1.55;}
+.pub-meta{font-size:0.76rem;color:var(--slate);margin-top:5px;line-height:1.5;}
+.pub-link{color:var(--blue-light);font-size:0.76rem;text-decoration:none;}
+.pub-link:hover{text-decoration:underline;}
+.filter-btn{padding:8px 20px;border-radius:100px;font-size:0.78rem;font-weight:500;border:1px solid rgba(30,95,168,0.25);background:transparent;color:var(--blue);cursor:pointer;transition:all 0.2s;letter-spacing:0.04em;font-family:'DM Sans',sans-serif;}
+.filter-btn:hover,.filter-btn.active{background:var(--blue);color:white;border-color:var(--blue);}
+.skill-card{background:white;border-radius:10px;padding:26px;border:1px solid rgba(30,95,168,0.08);box-shadow:0 3px 16px rgba(10,22,40,0.05);display:flex;gap:18px;align-items:flex-start;transition:box-shadow 0.2s;}
+.skill-card:hover{box-shadow:0 8px 32px rgba(10,22,40,0.1);}
+.skill-icon{width:46px;height:46px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+.skill-card h4{font-weight:600;color:var(--navy);margin-bottom:6px;font-size:0.93rem;}
+.skill-card p{font-size:0.84rem;color:#5a6e82;line-height:1.65;}
+.conf-badge{display:inline-flex;align-items:center;gap:8px;background:white;border:1px solid rgba(30,95,168,0.12);border-radius:8px;padding:9px 15px;margin:5px;font-size:0.82rem;color:var(--navy);box-shadow:0 2px 8px rgba(10,22,40,0.04);transition:all 0.2s;}
+.conf-badge:hover{border-color:var(--blue);}
+.conf-year{font-size:0.7rem;color:var(--blue);font-weight:600;margin-left:3px;}
+.affil-pill{display:inline-flex;align-items:center;gap:10px;background:white;border:1px solid rgba(30,95,168,0.12);border-radius:100px;padding:10px 22px;margin:5px;font-size:0.83rem;font-weight:500;color:var(--navy);}
+.affil-dot{width:8px;height:8px;border-radius:50%;background:var(--blue);}
+#contact{background:var(--navy);color:white;}
+#contact .section-label{color:var(--gold-light);}
+#contact .section-title{color:white;}
+#contact .section-title .italic{color:var(--sky);}
+.form-wrap{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:38px;}
+.form-label{display:block;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--slate-light);margin-bottom:8px;font-weight:600;}
+.form-input{width:100%;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:13px 16px;color:white;font-size:0.9rem;font-family:'DM Sans',sans-serif;outline:none;transition:border-color 0.2s,box-shadow 0.2s;}
+.form-input::placeholder{color:rgba(255,255,255,0.3);}
+.form-input:focus{border-color:rgba(100,168,216,0.6);box-shadow:0 0 0 3px rgba(30,95,168,0.2);}
+textarea.form-input{resize:vertical;min-height:130px;line-height:1.7;}
+.form-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:linear-gradient(135deg,var(--blue),var(--blue-light));color:white;border:none;border-radius:8px;padding:15px 28px;font-size:0.9rem;font-weight:600;letter-spacing:0.06em;font-family:'DM Sans',sans-serif;cursor:pointer;transition:all 0.25s;box-shadow:0 8px 28px rgba(30,95,168,0.4);}
+.form-btn:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(30,95,168,0.55);}
+.form-btn:disabled{opacity:0.65;cursor:not-allowed;transform:none;}
+.form-success{display:none;text-align:center;padding:20px;background:rgba(41,168,126,0.12);border:1px solid rgba(41,168,126,0.3);border-radius:8px;margin-top:8px;}
+footer{background:var(--navy-mid);padding:32px 0;text-align:center;border-top:1px solid rgba(255,255,255,0.06);}
+footer p{font-size:0.82rem;color:var(--slate);}
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.fade-in.visible{opacity:1;transform:none;}
+.hero-headline{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,6vw,5rem);font-weight:700;line-height:1.1;color:var(--white);letter-spacing:-0.01em;}
+.hero-headline em{font-style:italic;color:var(--sky);}
+.hero-sub{font-size:clamp(1rem,1.8vw,1.15rem);color:var(--slate-light);line-height:1.7;max-width:540px;margin-top:24px;}
+.hero-divider{width:64px;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light));margin:32px 0;border-radius:2px;}
+.hero-stat strong{font-family:'Playfair Display',serif;font-size:2.4rem;color:var(--white);font-weight:700;display:block;}
+.hero-stat small{font-size:0.7rem;color:var(--slate);letter-spacing:0.08em;text-transform:uppercase;margin-top:2px;display:block;}
+.hero-sep{width:1px;background:rgba(255,255,255,0.12);height:48px;}
+.hero-cta{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--blue),var(--blue-light));color:white;font-size:0.85rem;font-weight:600;letter-spacing:0.06em;padding:14px 32px;border-radius:4px;text-decoration:none;transition:all 0.25s;box-shadow:0 8px 32px rgba(30,95,168,0.4);}
+.hero-cta:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(30,95,168,0.55);}
+.hero-ghost{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.8);font-size:0.85rem;font-weight:500;letter-spacing:0.06em;padding:14px 32px;border-radius:4px;text-decoration:none;transition:all 0.25s;}
+.hero-ghost:hover{border-color:var(--gold);color:var(--gold-light);}
+@media(max-width:900px){.two-col{grid-template-columns:1fr;gap:40px;}.contact-row-1{grid-template-columns:1fr!important;}.refs-grid{grid-template-columns:1fr!important;}.books-grid{grid-template-columns:1fr!important;}}
+@media(max-width:768px){#hero-avatar-wrap{display:none!important;}section{padding:64px 0;}.container{padding:0 20px;}.nav-links{display:none;}}
+/* =========================
+   MOBILE FIXES
+========================= */
+
+@media (max-width: 768px) {
+
+  /* Navbar */
+  #navbar{
+    padding:10px 0 !important;
+  }
+
+  .nav-links{
+    display:none !important;
+  }
+
+  /* Hero */
+  #hero{
+    padding-top:180px !important;
+  }
+
+  #hero .container{
+    flex-direction:column !important;
+    text-align:center !important;
+    gap:30px !important;
+  }
+
+  /* Avatar */
+  #hero-avatar-wrap{
+    display:block !important;
+    width:240px !important;
+    height:300px !important;
+    margin:20px auto 30px !important;
+    order:-1;
+    visibility:visible !important;
+    opacity:1 !important;
+  }
+
+  #hero-avatar-wrap img{
+    width:100% !important;
+    height:100% !important;
+    object-fit:cover !important;
+  }
+
+  /* Stats */
+  .hero-sep{
+    display:none !important;
+  }
+
+  .hero-stat{
+    width:45% !important;
+    text-align:center !important;
+  }
+
+  /* Containers */
+  .container{
+    padding-left:20px !important;
+    padding-right:20px !important;
+  }
+
+  /* Grids */
+  .books-grid,
+  .refs-grid,
+  .contact-row-1,
+  .contact-row-2{
+    grid-template-columns:1fr !important;
+  }
+
+  /* Cards */
+  .book-card,
+  .qual-card,
+  .skill-card,
+  .about-card{
+    width:100% !important;
+  }
+
+  /* Typography */
+  h1{
+    font-size:3rem !important;
+    line-height:1.1 !important;
+  }
+
+  .hero-headline{
+    font-size:3rem !important;
+    line-height:1.1 !important;
+  }
+
+  .hero-sub{
+    max-width:100% !important;
+  }
+
+  /* Images */
+  img{
+    max-width:100%;
+    height:auto;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:16px;">
+    <a href="#hero" style="text-decoration:none;flex-shrink:0;">
+      <div style="line-height:1.2;">
+        <div style="font-family:'Playfair Display',serif;font-size:1rem;color:#fff;font-weight:700;">Prof. Dr. Fedaei Abbas</div>
+        <div style="font-size:0.62rem;color:var(--sky);letter-spacing:0.15em;text-transform:uppercase;margin-top:2px;">Consultant Nephrologist</div>
+      </div>
+    </a>
+    <div class="nav-links" style="display:flex;gap:24px;flex-wrap:wrap;">
+      <a href="#about"    class="nav-link">About</a>
+      <a href="#roles"    class="nav-link">Roles</a>
+      <a href="#quals"    class="nav-link">Qualifications</a>
+      <a href="#books"    class="nav-link">Books</a>
+      <a href="#research" class="nav-link">Research</a>
+      <a href="#skills"   class="nav-link">Skills</a>
+      <a href="#contact"  class="nav-link">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero" style="padding:120px 0 80px;">
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:64px;">
+    <div style="flex:1;min-width:0;position:relative;z-index:1;">
+      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(200,169,110,0.15);border:1px solid rgba(200,169,110,0.35);border-radius:100px;padding:6px 18px;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold-light);margin-bottom:28px;">
+        <span style="width:6px;height:6px;border-radius:50%;background:var(--gold);display:inline-block;"></span>
+        Head of Nephrology &amp; Hemodialysis &middot; Ahmed Maher Teaching Hospital, Cairo
+      </div>
+      <h1 class="hero-headline">Professor<br/><em>Fedaei Mohamed</em><br/>El-Sayed Abbas</h1>
+      <p class="hero-sub">Consultant Nephrologist and Transplantation Specialist with over four decades of distinguished clinical practice, academic leadership, and internationally published research across Egypt and Kuwait.</p>
+      <div class="hero-divider"></div>
+      <div style="display:flex;align-items:center;gap:32px;margin-bottom:40px;flex-wrap:wrap;">
+        <div class="hero-stat"><strong>40+</strong><small>Years in Nephrology</small></div>
+        <div class="hero-sep"></div>
+        <div class="hero-stat"><strong>25+</strong><small>Peer-Reviewed Papers</small></div>
+        <div class="hero-sep"></div>
+        <div class="hero-stat"><strong>2</strong><small>Medical Textbooks</small></div>
+        <div class="hero-sep"></div>
+        <div class="hero-stat"><strong>10+</strong><small>Int'l Conferences</small></div>
+      </div>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;">
+        <a href="#about"   class="hero-cta"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>Explore Profile</a>
+        <a href="#contact" class="hero-ghost">Contact &amp; Referrals</a>
+      </div>
+    </div>
+    <div id="hero-avatar-wrap" style="position:relative;width:380px;height:460px;flex-shrink:0;z-index:1;">
+      <div style="position:absolute;inset:-16px;border-radius:40% 60% 55% 45% / 45% 40% 60% 55%;border:1px dashed rgba(200,169,110,0.25);pointer-events:none;"></div>
+      <div style="position:absolute;inset:0;border-radius:40% 60% 55% 45% / 45% 40% 60% 55%;background:linear-gradient(135deg,rgba(30,95,168,0.25),rgba(100,168,216,0.1));border:1px solid rgba(100,168,216,0.18);pointer-events:none;"></div>
+      <!-- profile.jpg: object-contain keeps full portrait visible without cropping -->
+      <div style="position:absolute;inset:24px;border-radius:38% 62% 54% 46% / 44% 38% 62% 56%;overflow:hidden;border:3px solid rgba(100,168,216,0.35);box-shadow:0 24px 64px rgba(0,0,0,0.45);">
+        <img src="profile.jpg" alt="Prof. Dr. Fedaei Mohamed El-Sayed Abbas — Consultant Nephrologist" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;" loading="eager" onerror="this.style.display='none';document.getElementById('avatar-fb').style.display='flex';"/>
+        <div id="avatar-fb" style="display:none;width:100%;height:100%;background:linear-gradient(160deg,var(--navy-light),var(--navy-mid));flex-direction:column;align-items:center;justify-content:center;color:var(--slate);gap:12px;text-align:center;padding:24px;">
+          <svg width="64" height="64" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1" style="opacity:0.4;"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z"/></svg>
+          <p style="font-size:0.72rem;opacity:0.5;line-height:1.5;">Place profile.jpg<br/>in the same folder</p>
+        </div>
+        <div style="position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(to top,rgba(10,22,40,0.55),transparent);pointer-events:none;"></div>
+      </div><!--
+      <div style="position:absolute;bottom:44px;left:-32px;background:rgba(10,22,40,0.92);backdrop-filter:blur(10px);border:1px solid rgba(100,168,216,0.3);border-radius:10px;padding:14px 18px;width:190px;z-index:2;">
+        <div style="font-size:0.62rem;color:var(--sky);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;">Current Role</div>
+        <div style="font-size:0.8rem;color:white;line-height:1.4;">Head of Nephrology &amp; HDx<br/><span style="color:var(--slate);font-size:0.72rem;">Ahmed Maher Hospital, Cairo</span></div>
+      </div>
+      <div style="position:absolute;top:44px;right:-24px;background:rgba(200,169,110,0.15);backdrop-filter:blur(10px);border:1px solid rgba(200,169,110,0.35);border-radius:10px;padding:14px 18px;width:160px;z-index:2;">
+        <div style="font-size:0.62rem;color:var(--gold-light);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;">Distinction</div>
+        <div style="font-size:0.78rem;color:white;line-height:1.4;">GKA Leadership<br/>Prize &middot; London 2015</div> -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-label">Executive Summary</div>
+    <h2 class="section-title">A Career Defined by<br/><span class="italic">Excellence in Kidney Medicine</span></h2>
+    <div class="section-rule"></div>
+    <div class="two-col">
+      <div class="fade-in">
+        <p style="font-family:'DM Serif Display',serif;font-size:clamp(1.1rem,1.8vw,1.3rem);color:var(--navy);line-height:1.8;margin-bottom:22px;">Professor Fedaei Mohamed El-Sayed Abbas is one of the Arab world's foremost authorities in clinical nephrology, hemodialysis, and organ transplantation, with a career spanning more than four decades across Egypt and Kuwait.</p>
+        <p style="font-size:0.97rem;color:#3a4a5c;line-height:1.85;margin-bottom:18px;">Graduating from Al-Azhar University in 1981, Professor Abbas pursued a rigorous academic and clinical pathway that culminated in a Doctorate in Internal Medicine and Nephrology in 1997 and a Master's degree with Distinction in Organ Transplantation Science from the University of Liverpool, United Kingdom. His commitment to continual professional development was further recognised when he received the Leadership Prize from the Global Kidney Academy (GKA), London, in 2015.</p>
+        <p style="font-size:0.97rem;color:#3a4a5c;line-height:1.85;margin-bottom:18px;">Over the course of his career, Professor Abbas has served as Head of the Nephrology and Hemodialysis Department at two of the region's most prominent medical institutions: Ahmed Maher Teaching Hospital, Cairo and Jaber El-Ahmed Military Hospital, Kuwait, where he was instrumental in establishing and developing the department from the ground up between 2006 and 2021.</p>
+        <p style="font-size:0.97rem;color:#3a4a5c;line-height:1.85;">A prolific researcher, he has authored over 25 peer-reviewed articles in nationally and internationally indexed journals, contributed to landmark transplantation literature published in the <em>World Journal of Transplantation</em>, and authored a 794-question reference textbook. He is an Editor of the <em>Journal of Renal Transplantation Science</em> (Sci Tech Central Inc., USA) and a Member of the Scientific Committee of the ASNRT Fellowship Programme in Clinical Transplantation.</p>
+      </div>
+      <div class="fade-in" style="display:flex;flex-direction:column;gap:18px;">
+        <div class="about-card">
+          <div class="about-card-icon"><svg width="20" height="20" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0016.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 002 8.5c0 2.3 1.5 4.05 3 5.5l7 7 7-7z"/></svg></div>
+          <h4>Clinical Leadership</h4>
+          <p>Dual Head of Department roles in Cairo and Kuwait, overseeing nephrology, hemodialysis, peritoneal dialysis, and transplant follow-up services for thousands of patients over two decades.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-card-icon" style="background:linear-gradient(135deg,var(--gold),var(--gold-light));"><svg width="20" height="20" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+          <h4>Academic Distinction</h4>
+          <p>Three postgraduate degrees from Al-Azhar University and the University of Liverpool, including a Master's in Organ Transplantation Science awarded with Distinction, and the GKA Leadership Prize.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-card-icon" style="background:linear-gradient(135deg,#1a7a5e,#29a87e);"><svg width="20" height="20" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+          <h4>International Research Impact</h4>
+          <p>Published in the <em>World Journal of Transplantation</em> and multiple indexed regional journals, with collaborative authorship alongside leading UK transplant surgeons.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-card-icon" style="background:linear-gradient(135deg,#5a2d8a,#8a4db8);"><svg width="20" height="20" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0"/></svg></div>
+          <h4>Fellowship Training &amp; Education</h4>
+          <p>Trainer for the Egyptian Board of Nephrology (FEBN) and the Arab Fellowship of the Arab Transplant Society (ASNRT), shaping the next generation of nephrology specialists across the Arab world.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROLES -->
+<section id="roles">
+  <div class="container">
+    <div class="section-label">Professional Journey</div>
+    <h2 class="section-title">Key Clinical &amp;<br/><span class="italic">Leadership Roles</span></h2>
+    <div class="section-rule"></div>
+    <div class="two-col">
+      <div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--navy);margin-bottom:28px;padding-bottom:12px;border-bottom:1px solid rgba(30,95,168,0.12);">Current &amp; Senior Positions</h3>
+        <div class="timeline-item featured">
+          <div class="timeline-left"><div class="timeline-dot"></div><div class="timeline-year">2021-Present</div><div class="timeline-line"></div></div>
+          <div class="timeline-body"><span class="timeline-tag">Head of Department</span><h3>Nephrology &amp; Hemodialysis Department</h3><p><strong>Ahmed Maher Teaching Hospital, Cairo, Egypt</strong><br/>Leading all clinical, academic, and administrative operations under the General Organization of Institutes and Teaching Hospitals (GOITH).</p></div>
+        </div>
+        <div class="timeline-item featured">
+          <div class="timeline-left"><div class="timeline-dot"></div><div class="timeline-year">2006-2021</div><div class="timeline-line"></div></div>
+          <div class="timeline-body"><span class="timeline-tag">Head of Department Kuwait</span><h3>Nephrology &amp; Hemodialysis Department</h3><p><strong>Jaber El-Ahmed Military Hospital, Sabhan, Kuwait</strong><br/>El Hajery Company / Ministry of Defence. Established, developed, and directed the full nephrology and hemodialysis infrastructure for over fifteen years.</p></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-left"><div class="timeline-dot"></div><div class="timeline-year">Ongoing</div><div class="timeline-line"></div></div>
+          <div class="timeline-body"><span class="timeline-tag">Editorial Role</span><h3>Editor - Journal of Renal Transplantation Science</h3><p>Sci Tech Central Inc., USA. Contributing to peer-review and publication standards in international transplantation science.</p></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-left"><div class="timeline-dot"></div><div class="timeline-year">Ongoing</div></div>
+          <div class="timeline-body"><span class="timeline-tag">Scientific Committee</span><h3>ASNRT Fellowship in Clinical Transplantation</h3><p>Member of the Scientific Committee and Trainer - Arab Fellowship of the Arab Transplant Society. Defining curriculum standards for the Arab world's premier transplantation fellowship.</p></div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--navy);margin-bottom:28px;padding-bottom:12px;border-bottom:1px solid rgba(30,95,168,0.12);">Career Progression</h3>
+        <div class="timeline-item">
+          <div class="timeline-left"><div class="timeline-dot"></div><div class="timeline-year">Dec 2009</div><div class="timeline-line"></div></div>
+          <div class="timeline-body"><span class="timeline-tag">Appointment</span><h3>Professor (Consultant) of Nephrology</h3><p>Appointed 23 December 2009. Full professorial and consultant standing in Internal Medicine and Nephrology.</p></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-left"><div class="timeline-dot"></div><div class="timeline-year">2003-2008</div><div class="timeline-line"></div></div>
+          <div class="timeline-body"><span class="timeline-tag">Academic</span><h3>Associate Professor (Assistant Consultant) of Nephrology</h3><p>Ahmed Maher Teaching Hospital, Cairo.</p></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-left"><div class="timeline-dot"></div><div class="timeline-year">2005-2006</div><div class="timeline-line"></div></div>
+          <div class="timeline-body"><span class="timeline-tag">Trainer &amp; Committee</span><h3>Egyptian Board of Nephrology (FEBN)</h3><p>Trainer and Member of the Scientific Committee for the Egyptian nephrology fellowship curriculum.</p></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-left"><div class="timeline-dot"></div><div class="timeline-year">1999</div><div class="timeline-line"></div></div>
+          <div class="timeline-body"><span class="timeline-tag">Consultant</span><h3>Consultant Nephrologist, GOITH</h3><p>Ahmed Maher Teaching Hospital, Cairo. Also served as Consultant Nephrologist in Medical Insurance sectors - Benha and Giza (6th of October Hospital, Dokki).</p></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-left"><div class="timeline-dot"></div><div class="timeline-year">1998-2006</div></div>
+          <div class="timeline-body"><span class="timeline-tag">Fellowship</span><h3>Fellow (Lecturer) of Nephrology</h3><p>Ahmed Maher Teaching Hospital. Clinical nephrology, hemodialysis, peritoneal dialysis, renal biopsy, abdominal ultrasound, and renal transplantation.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUALIFICATIONS -->
+<section id="quals">
+  <div class="container">
+    <div class="section-label">Academic Background</div>
+    <h2 class="section-title">Qualifications &amp;<br/><span class="italic">Distinctions</span></h2>
+    <div class="section-rule"></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-bottom:48px;">
+      <div class="qual-card fade-in">
+        <div style="font-size:1.8rem;margin-bottom:14px;">&#127891;</div>
+        <h3>M.B.B.Ch. - Bachelor of Medicine &amp; Surgery</h3>
+        <div class="institution">Al-Azhar University, Cairo</div>
+        <div class="year">December 1981</div>
+        <p>Foundational medical degree from Egypt's oldest and most prestigious Islamic university.</p>
+      </div>
+      <div class="qual-card fade-in">
+        <div style="font-size:1.8rem;margin-bottom:14px;">&#128203;</div>
+        <h3>Master's - Internal Medicine &amp; Nephrology</h3>
+        <div class="institution">Al-Azhar University, Cairo</div>
+        <div class="year">November 1988</div>
+        <p>Advanced postgraduate specialisation in internal medicine with a focus on renal disease.</p>
+      </div>
+      <div class="qual-card fade-in">
+        <div style="font-size:1.8rem;margin-bottom:14px;">&#127963;</div>
+        <h3>M.D. - Internal Medicine &amp; Nephrology</h3>
+        <div class="institution">Al-Azhar University, Cairo</div>
+        <div class="year">October 1997</div>
+        <p>Doctoral degree marking the pinnacle of his Egyptian academic training in nephrology and internal medicine.</p>
+      </div>
+      <div class="qual-card gold fade-in">
+        <div style="font-size:1.8rem;margin-bottom:14px;">&#127468;&#127463;</div>
+        <h3>Master's - Organ Transplantation Science</h3>
+        <div class="institution" style="color:var(--gold);">University of Liverpool, United Kingdom</div>
+        <div class="year">Awarded with Distinction</div>
+        <p>International postgraduate qualification in transplantation science from one of the UK's leading medical schools.</p>
+        <span class="distinction-badge">&#11088; Awarded with Distinction</span>
+      </div>
+    </div>
+    <!-- GKA Prize -->
+    <div style="background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);border-radius:16px;padding:48px;display:flex;gap:40px;align-items:center;flex-wrap:wrap;margin-bottom:32px;">
+      <div style="flex:1;min-width:240px;">
+        <div style="font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px;">Distinction &amp; Prize</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.5rem;color:white;margin-bottom:14px;">Global Kidney Academy<br/>Leadership Prize</h3>
+        <p style="font-size:0.9rem;color:var(--slate-light);line-height:1.8;">Completed the Renal Transplantation course offered by the <strong style="color:white;">Global Kidney Academy (GKA), London</strong>, directed by Professor Abdol Maguid El-Nahas (January-June 2015). Passed with Distinction and received the prestigious <strong style="color:var(--gold-light);">Leadership Prize</strong> - the academy's highest individual honour.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:28px;background:rgba(200,169,110,0.1);border:1px solid rgba(200,169,110,0.25);border-radius:12px;min-width:160px;">
+        <div style="font-size:2.8rem;margin-bottom:8px;">&#127942;</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1rem;color:var(--gold-light);">Leadership Prize</div>
+        <div style="font-size:0.75rem;color:var(--slate);margin-top:4px;">GKA &middot; London &middot; 2015</div>
+      </div>
+    </div>
+    <!-- Additional Certifications -->
+    <div>
+      <div style="font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue);font-weight:600;margin-bottom:16px;">Additional Certifications</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;">
+        <div style="background:white;border-radius:10px;padding:28px;border:1px solid rgba(30,95,168,0.1);box-shadow:0 3px 16px rgba(10,22,40,0.05);display:flex;align-items:flex-start;gap:18px;">
+          <div style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--blue),var(--blue-light));display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="20" height="20" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </div>
+          <div>
+            <div style="font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);font-weight:600;margin-bottom:6px;">Language Certification</div>
+            <h4 style="font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--navy);margin-bottom:4px;">TOEFL</h4>
+            <p style="font-size:0.85rem;color:#5a6e82;line-height:1.6;">American University in Cairo (AUC)<br/>Cairo, Egypt &middot; 1995</p>
+          </div>
+        </div>
+        <div style="background:white;border-radius:10px;padding:28px;border:1px solid rgba(30,95,168,0.1);box-shadow:0 3px 16px rgba(10,22,40,0.05);display:flex;align-items:flex-start;gap:18px;">
+          <div style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--navy-mid),var(--navy-light));display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="20" height="20" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <div style="font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);font-weight:600;margin-bottom:6px;">Military Service</div>
+            <h4 style="font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--navy);margin-bottom:4px;">Military Medical Corps</h4>
+            <p style="font-size:0.85rem;color:#5a6e82;line-height:1.6;">Egyptian Military Medical Academy<br/>Egypt &middot; 1983-1985</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKS -->
+<section id="books">
+  <div class="container">
+    <div class="section-label">Published Textbooks</div>
+    <h2 class="section-title">Books &amp;<br/><span class="italic">Literary Contributions</span></h2>
+    <div class="section-rule"></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:48px;" class="books-grid">
+
+      <!-- Book 1: book-cover.jpg with object-contain so full cover is visible -->
+      <div class="book-card">
+        <div style="position:relative;width:100%;background:linear-gradient(160deg,var(--navy) 0%,var(--navy-light) 100%);display:flex;align-items:center;justify-content:center;min-height:340px;">
+          <img
+            src="book-cover1.jpg"
+            alt="Book cover of Seven Hundred Questions and Answers in Nephrology, Dialysis and Transplantation - First Edition by Prof. Dr. Fedaei Mohamed El-Sayed Abbas - Published by Maktabat Al-Mareekh, Saudi Arabia"
+            style="width:100%;height:auto;max-height:420px;object-fit:contain;object-position:center;display:block;transition:transform 0.4s ease;position:relative;z-index:1;"
+            loading="lazy"
+            onmouseover="this.style.transform='scale(1.03)'"
+            onmouseout="this.style.transform='scale(1)'"
+            onerror="this.style.display='none';document.getElementById('book-fallback').style.display='flex';"
+          />
+          <div id="book-fallback" style="display:none;width:100%;min-height:340px;position:absolute;top:0;left:0;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:32px;z-index:2;">
+            <div style="width:36px;height:3px;background:var(--gold);margin:0 auto 14px;"></div>
+            <h3 style="font-family:'Playfair Display',serif;font-size:1rem;color:white;line-height:1.5;">"Seven Hundred Questions and Answers in Nephrology, Dialysis and Transplantation"</h3>
+            <div style="font-size:0.7rem;color:var(--sky);letter-spacing:0.1em;text-transform:uppercase;margin-top:10px;">First Edition</div>
+          </div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:14px 18px;background:linear-gradient(to top,rgba(10,22,40,0.88),transparent);pointer-events:none;z-index:3;">
+            <div style="font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin-bottom:3px;">First Edition &middot; Published</div>
+            <div style="font-size:0.82rem;color:white;font-family:'Playfair Display',serif;line-height:1.4;">Seven Hundred Questions &middot; Nephrology, Dialysis &amp; Transplantation</div>
+          </div>
+        </div>
+        <div class="book-body">
+          <div style="font-size:0.68rem;color:var(--gold-light);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;">Book One - Published</div>
+          <p>An authoritative 400-page reference comprising <strong style="color:var(--sky);">794 meticulously curated questions</strong> with comprehensive model answers, spanning clinical nephrology, hemodialysis, and organ transplantation. Enriched with histopathological slides and diagnostic radiographic images.</p>
+          <p style="margin-top:10px;font-size:0.83rem;color:#6a7a8a;">Published by <strong style="color:var(--slate-light);">Maktabat Al-Mareekh</strong>, Jeddah &amp; Riyadh, Saudi Arabia.</p>
+          <div style="margin-top:10px;"><span class="book-tag">Clinical Nephrology</span><span class="book-tag">Hemodialysis</span><span class="book-tag">Transplantation</span></div>
+          <!-- conference.jpg: object-contain displays the full group photo without cutting anyone -->
+          <div style="margin-top:18px;border-radius:10px;overflow:hidden;border:1px solid rgba(200,169,110,0.3);background:var(--navy);">
+            <img
+              src="conference1.jpg"
+              alt="Prof. Dr. Fedaei Mohamed El-Sayed Abbas alongside Prof. Abdol Maguid El-Nahas at Kuwait World Kidney Day 2015. Prof. El-Nahas is holding the textbook Seven Hundred Questions and Answers in Nephrology Dialysis and Transplantation."
+              style="width:100%;height:auto;max-height:300px;object-fit:cover;object-position:center;display:block;background:var(--navy);"
+              loading="lazy"
+              onerror="this.parentElement.style.display='none';"
+            />
+            <div style="padding:10px 14px;background:rgba(200,169,110,0.08);border-top:1px solid rgba(200,169,110,0.2);">
+              <p style="font-size:0.75rem;color:var(--gold-light);font-style:italic;line-height:1.55;">Prof. El-Nahas holding the textbook at Kuwait World Kidney Day 2015 - an international acknowledgement of the work's standing in the field.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book 2 -->
+      <div class="book-card">
+        <div style="height:340px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0e2a1e 0%,rgba(30,95,60,0.45) 100%);border-bottom:1px solid rgba(100,168,216,0.12);position:relative;overflow:hidden;">
+          <div style="position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 8px,rgba(255,255,255,0.015) 8px,rgba(255,255,255,0.015) 9px);pointer-events:none;"></div>
+          <div style="text-align:center;padding:32px;z-index:1;">
+            <div style="width:36px;height:3px;background:var(--sky);margin:0 auto 14px;"></div>
+            <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;color:white;line-height:1.5;">"Renal Face"<br/>Clinical Scenarios</h3>
+            <div style="font-size:0.7rem;color:rgba(100,200,168,0.8);letter-spacing:0.1em;text-transform:uppercase;margin-top:10px;">Second Book &middot; In Press</div>
+          </div>
+        </div>
+        <div class="book-body">
+          <div style="font-size:0.68rem;color:var(--sky);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;">Book Two - In Press</div>
+          <p>A forthcoming clinical scenarios textbook designed to guide nephrologists and transplantation specialists through complex, real-world case presentations. Drawing on Professor Abbas's unparalleled breadth of clinical experience across Egypt, Kuwait, and international settings, <em>Renal Face</em> is anticipated to become an essential case-based learning resource.</p>
+          <p style="margin-top:10px;font-size:0.83rem;color:#6a7a8a;">Status: Currently in press. Publication details to be announced.</p>
+          <div style="margin-top:10px;"><span class="book-tag">Case-Based Learning</span><span class="book-tag">Clinical Scenarios</span><span class="book-tag">Forthcoming</span></div>
+          <div style="margin-top:20px;padding:14px;background:rgba(100,168,216,0.08);border:1px solid rgba(100,168,216,0.2);border-radius:8px;">
+            <p style="font-size:0.78rem;color:var(--sky);">&#128218; Contact the author for pre-publication enquiries.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- Blog CTA -->
+    <div style="text-align:center;padding:40px;background:linear-gradient(135deg,rgba(30,95,168,0.06),rgba(100,168,216,0.06));border:1px solid rgba(30,95,168,0.1);border-radius:12px;">
+      <div style="font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--blue);margin-bottom:10px;">Online Knowledge Hub</div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--navy);margin-bottom:10px;">Visit the FedoKidney Blog</h3>
+      <p style="color:#5a6e82;max-width:460px;margin:0 auto 22px;line-height:1.7;font-size:0.93rem;">Professor Abbas maintains an active medical blog providing expert-level commentary on nephrology, transplantation, and kidney health for patients and clinicians worldwide.</p>
+      <a href="https://www.fedokidney.com" target="_blank" style="display:inline-flex;align-items:center;gap:10px;background:var(--blue);color:white;padding:14px 36px;border-radius:4px;text-decoration:none;font-weight:600;font-size:0.88rem;box-shadow:0 6px 24px rgba(30,95,168,0.3);">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        Visit fedokidney.com
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="container">
+    <div class="section-label">Scholarly Output</div>
+    <h2 class="section-title">Research &amp;<br/><span class="italic">Publications</span></h2>
+    <div class="section-rule"></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px;" id="pub-filters">
+      <button class="filter-btn active" onclick="filterPubs('all',this)">All Publications</button>
+      <button class="filter-btn" onclick="filterPubs('intl',this)">International Journals</button>
+      <button class="filter-btn" onclick="filterPubs('transplant',this)">Transplantation</button>
+      <button class="filter-btn" onclick="filterPubs('national',this)">Regional Journals</button>
+    </div>
+    <div id="pub-list">
+      <div class="pub-item intl" data-cat="intl transplant">
+        <div class="pub-journal">World Journal of Transplantation &middot; 2021</div>
+        <h4>Journey of a Patient with Scleroderma from Renal Failure to Kidney Transplantation</h4>
+        <div class="pub-meta">Abbas F, El Kossi M, Shaheen IS, Sharma A, Halawa A. World J Transplant 2021; 11(9): 372-387.</div>
+        <a href="https://www.wjgnet.com/2220-3230/full/v11/i9/372.htm" target="_blank" class="pub-link">DOI: 10.5500/wjt.v11.i9.372 &#8599;</a>
+      </div>
+      <div class="pub-item intl" data-cat="intl transplant">
+        <div class="pub-journal">Experimental &amp; Clinical Transplantation &middot; 2021</div>
+        <h4>De Novo and Recurrent Thrombotic Microangiopathy After Renal Transplantation: Current Concepts in Management</h4>
+        <div class="pub-meta">Fedaey Abbas, Sara Fedaei Abbas.</div>
+        <a href="http://www.ectrx.org/detail/epub/1/1/1/0/1126/0" target="_blank" class="pub-link">View Publication &#8599;</a>
+      </div>
+      <div class="pub-item intl" data-cat="intl transplant">
+        <div class="pub-journal">World Journal of Transplantation &middot; 2020</div>
+        <h4>Post-Transplantation Lymphoproliferative Disorders: Current Concepts and Future Therapeutic Approaches</h4>
+        <div class="pub-meta">Abbas F, El Kossi M, Shaheen IS, Sharma A, Halawa A. World J Transplant 2020; 10(2): 29-46.</div>
+        <a href="https://www.wjgnet.com/2220-3230/full/v10/i2/29.htm" target="_blank" class="pub-link">View Publication &#8599;</a>
+      </div>
+      <div class="pub-item intl" data-cat="intl transplant">
+        <div class="pub-journal">J. Egyptian Society of Nephrology &amp; Transplantation &middot; 2019</div>
+        <h4>Parasitic Infestation in Organ Transplant Recipients: A Comprehensive Review</h4>
+        <div class="pub-meta">Abbas F, El Kossi M, Kim JJ, Shaheen IS, Sharma A, Pararajasingam R, Halawa A. JESNT 2019; 19: 31-61.</div>
+        <a href="http://www.jesnt.eg.net/text.asp?2019/19/2/31/260214" target="_blank" class="pub-link">View Publication &#8599;</a>
+      </div>
+      <div class="pub-item intl" data-cat="intl transplant">
+        <div class="pub-journal">World Journal of Transplantation &middot; 2018</div>
+        <h4>Complement-Mediated Renal Diseases After Kidney Transplantation - Current Diagnostic and Therapeutic Options in De Novo and Recurrent Disease</h4>
+        <div class="pub-meta">Abbas F, El Kossi M, Kim JJ, Shaheen IS, Sharma A, Halawa A. World J Transplant 2018; 8(6): 203-219.</div>
+        <a href="https://www.wjgnet.com/2220-3230/full/v8/i6/203.htm" target="_blank" class="pub-link">View Publication &#8599;</a>
+      </div>
+      <div class="pub-item intl" data-cat="intl transplant">
+        <div class="pub-journal">World Journal of Transplantation &middot; 2018</div>
+        <h4>Thrombotic Microangiopathy After Renal Transplantation: Current Insights in De Novo and Recurrent Disease</h4>
+        <div class="pub-meta">Abbas F, El Kossi M, Kim JJ, Sharma A, Halawa A. World J Transplant 2018; 8(5): 122-141.</div>
+        <a href="https://www.wjgnet.com/2220-3230/full/v8/i5/122.htm" target="_blank" class="pub-link">View Publication &#8599;</a>
+      </div>
+      <div class="pub-item intl" data-cat="intl transplant">
+        <div class="pub-journal">World Journal of Transplantation &middot; 2017</div>
+        <h4>Recurrence of Primary Glomerulonephritis: Review of the Current Evidence</h4>
+        <div class="pub-meta">Abbas F, El Kossi M, Jin JK, Sharma A, Halawa A. World J Transplant 2017; 7(6): 301-316.</div>
+        <a href="https://www.wjgnet.com/2220-3230/full/v7/i6/301.htm" target="_blank" class="pub-link">View Publication &#8599;</a>
+      </div>
+      <div class="pub-item intl" data-cat="intl transplant">
+        <div class="pub-journal">World Journal of Transplantation &middot; 2017</div>
+        <h4>De Novo Glomerular Diseases After Renal Transplantation: How Is It Different from Recurrent Glomerular Disease?</h4>
+        <div class="pub-meta">Abbas F, El Kossi M, Jin JK, Sharma A, Halawa A. World J Transplant 2017; 7(6): 285-300.</div>
+        <a href="https://www.wjgnet.com/2220-3230/full/v7/i6/285.htm" target="_blank" class="pub-link">View Publication &#8599;</a>
+      </div>
+      <div class="pub-item intl" data-cat="intl transplant">
+        <div class="pub-journal">World Journal of Transplantation &middot; 2016</div>
+        <h4>Contrast Nephropathy in Renal Transplantation: Is It Real?</h4>
+        <div class="pub-meta">Abbas FM, Julie BM, Sharma A, Halawa A. World J Transplant 2016; 6(4): 682-688.</div>
+        <a href="https://www.wjgnet.com/2220-3230/full/v6/i4/682.htm" target="_blank" class="pub-link">View Publication &#8599;</a>
+      </div>
+      <div class="pub-item national" data-cat="national">
+        <div class="pub-journal">Journal of Egyptian Society of Nephrology &middot; 2006</div>
+        <h4>Impact of Long-Term Darbepoetin Alfa Therapy on Hyperleptinemic Uremic Patients on Maintenance Hemodialysis</h4>
+        <div class="pub-meta">Journal of Egyptian Society of Nephrology (JESN), 2006.</div>
+      </div>
+      <div class="pub-item national" data-cat="national">
+        <div class="pub-journal">JESN &middot; 2005</div>
+        <h4>Thyroid Failure in Advanced Chronic Kidney Disease: Role of Erythropoietin Therapy</h4>
+        <div class="pub-meta">Journal of Egyptian Society of Nephrology 8(1): 137-142, December 2005.</div>
+      </div>
+      <div class="pub-item national" data-cat="national">
+        <div class="pub-journal">JESN &middot; 2005</div>
+        <h4>Mixed Cryoglobulinemia: Role of Renal Dysfunction in Chronic Liver Diseases</h4>
+        <div class="pub-meta">Journal of Egyptian Society of Nephrology 8(1): 84-90, December 2005.</div>
+      </div>
+      <div class="pub-item national" data-cat="national">
+        <div class="pub-journal">Zagazig University Medical Journal &middot; 2007</div>
+        <h4>C-Reactive Protein Levels in Thyroid Diseases</h4>
+        <div class="pub-meta">Zagazig University Medical Journal, Vol. 13, No. 3, March 2007: 2235-2244.</div>
+      </div>
+      <div class="pub-item national" data-cat="national">
+        <div class="pub-journal">Zagazig University Medical Journal &middot; 2007</div>
+        <h4>Subclinical Hypothyroidism and Serum Lipids</h4>
+        <div class="pub-meta">Zagazig University Medical Journal, Vol. 13, No. 3, March 2007: 2245-2256.</div>
+      </div>
+      <div class="pub-item national" data-cat="national">
+        <div class="pub-journal">Medical Journal of Cairo University &middot; 2002</div>
+        <h4>Vascular Access Occlusion and Hypertension in ESRD Patients on Regular Hemodialysis: Role of Endothelin and Nitric Oxide</h4>
+        <div class="pub-meta">Medical Journal of Cairo University, Vol. 70, No. 2, Supp. II, June 2002: 215-221.</div>
+      </div>
+      <div class="pub-item national" data-cat="national">
+        <div class="pub-journal">Egyptian Journal of Hospital Medicine &middot; 2002</div>
+        <h4>Sensorineural Hearing Affection in Sickle Cell Disease Patients with Chronic Renal Failure Under Dialysis</h4>
+        <div class="pub-meta">Egyptian Journal of Hospital Medicine (Ain Shams University), Vol. 7: 41-52, June 2002.</div>
+      </div>
+      <div class="pub-item national" data-cat="national">
+        <div class="pub-journal">Zagazig University Medical Journal &middot; 2001</div>
+        <h4>Hepatic Schistosomiasis and Chronic Hepatitis-Associated Nephropathy</h4>
+        <div class="pub-meta">Zagazig University Medical Journal, Vol. VII, No. 5, September 2001: 1816-1831.</div>
+      </div>
+      <div class="pub-item national" data-cat="national">
+        <div class="pub-journal">JESN &middot; 2001</div>
+        <h4>Acute Renal Failure Among Critically Ill Patients: Risk Factors and Prognosis</h4>
+        <div class="pub-meta">Journal of Egyptian Society of Nephrology, December 2001, Vol. 3, No. 1: 3-11.</div>
+      </div>
+      <div class="pub-item national" data-cat="national">
+        <div class="pub-journal">Benha University Medical Journal &middot; 2000</div>
+        <h4>Central Venous Angioaccess for Acute Hemodialysis and Associated Sepsis: Impact of Prophylactic Antibiotics</h4>
+        <div class="pub-meta">Benha University Medical Journal, Vol. 17, No. 3, September 2000: 653-668.</div>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:28px;font-size:0.83rem;color:var(--slate);">Full bibliography available upon request. Displaying core peer-reviewed publications.</p>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="section-label">Procedural Expertise</div>
+    <h2 class="section-title">Clinical Skills &amp;<br/><span class="italic">Invasive Procedures</span></h2>
+    <div class="section-rule"></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px;margin-bottom:52px;">
+      <div class="skill-card fade-in">
+        <div class="skill-icon" style="background:linear-gradient(135deg,var(--blue),var(--blue-light));"><svg width="22" height="22" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M20.188 10.934A8.003 8.003 0 0021 12a9 9 0 11-9-9c.69 0 1.36.08 2.006.234"/></svg></div>
+        <div><h4>Renal Biopsy</h4><p>Ultrasound-guided percutaneous renal biopsy for histopathological diagnosis of native and transplant kidney disease. Extensive experience across academic and military hospital settings.</p></div>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-icon" style="background:linear-gradient(135deg,var(--blue),var(--blue-light));"><svg width="22" height="22" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/></svg></div>
+        <div><h4>Femoral Venous Catheterisation</h4><p>Femoral catheter placement for acute hemodialysis access - a critical life-saving intervention in acute kidney injury and emergency renal replacement therapy.</p></div>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-icon" style="background:linear-gradient(135deg,var(--blue),var(--blue-light));"><svg width="22" height="22" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M4 9V5a2 2 0 012-2h8.5L18 6.5V9M4 9h14M4 9v10a2 2 0 002 2h8a2 2 0 002-2V9"/></svg></div>
+        <div><h4>Internal Jugular Venous Catheterisation</h4><p>Internal jugular central venous catheter placement for acute hemodialysis, providing reliable upper-body vascular access in inpatient and intensive care settings.</p></div>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-icon" style="background:linear-gradient(135deg,var(--navy-mid),var(--navy-light));"><svg width="22" height="22" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg></div>
+        <div><h4>Subclavian Venous Catheterisation</h4><p>Subclavian catheter placement for hemodialysis access in selected cases requiring alternative or long-term central venous access, with meticulous attention to minimising complications.</p></div>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-icon" style="background:linear-gradient(135deg,var(--navy-mid),var(--navy-light));"><svg width="22" height="22" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+        <div><h4>Tunnelled Permcath Catheter Insertion</h4><p>Placement of right- and left-sided tunnelled (Permcath) catheters for long-term hemodialysis access - a technically demanding procedure requiring precise anatomical knowledge.</p></div>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-icon" style="background:linear-gradient(135deg,#1a7a5e,#29a87e);"><svg width="22" height="22" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+        <div><h4>Hemodialysis Unit Management</h4><p>Full operational leadership of hemodialysis units - establishment, staffing, protocol development, quality assurance, and supervision of complex dialysis patients at both Ahmed Maher and Jaber El-Ahmed Hospitals.</p></div>
+      </div>
+    </div>
+    <!-- Conferences -->
+    <div style="margin-bottom:48px;">
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--navy);margin-bottom:8px;">International Conference Participation</h3>
+      <p style="color:#5a6e82;font-size:0.88rem;margin-bottom:20px;">Representative selection of international and regional scientific conferences.</p>
+      <div style="display:flex;flex-wrap:wrap;">
+        <span class="conf-badge">&#127465;&#127472; EDTA &middot; Copenhagen <span class="conf-year">2003</span></span>
+        <span class="conf-badge">&#127477;&#127481; EDTA &middot; Lisbon <span class="conf-year">2004</span></span>
+        <span class="conf-badge">&#127481;&#127479; EDTA &middot; Istanbul <span class="conf-year">2005</span></span>
+        <span class="conf-badge">&#127470;&#127481; EDTA &middot; Milan <span class="conf-year">2009</span></span>
+        <span class="conf-badge">&#127462;&#127466; ISN International &middot; Dubai <span class="conf-year">2012</span></span>
+        <span class="conf-badge">&#127487;&#127462; "At the Limits" &middot; Cape Town <span class="conf-year">2012</span></span>
+        <span class="conf-badge">&#127481;&#127479; EDTA &middot; Istanbul <span class="conf-year">2013</span></span>
+        <span class="conf-badge">&#127468;&#127463; EDTA &middot; London <span class="conf-year">2015</span></span>
+        <span class="conf-badge">&#127464;&#127487; Elite Nephrology &middot; Prague <span class="conf-year">2016</span></span>
+        <span class="conf-badge">&#127462;&#127481; EDTA &middot; Vienna <span class="conf-year">2017</span></span>
+        <span class="conf-badge">&#127472;&#127484; KNA Symposium &middot; AKI <span class="conf-year">2008</span></span>
+        <span class="conf-badge">&#127472;&#127484; MEDSORT &middot; Kuwait <span class="conf-year">2006</span></span>
+      </div>
+    </div>
+    <!-- Affiliations -->
+    <div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--navy);margin-bottom:18px;">Professional Affiliations</h3>
+      <div style="display:flex;flex-wrap:wrap;">
+        <span class="affil-pill"><span class="affil-dot"></span>Egyptian Society of Nephrology (ESN)</span>
+        <span class="affil-pill"><span class="affil-dot"></span>International Society of Nephrology (ISN)</span>
+        <span class="affil-pill"><span class="affil-dot"></span>Arab Society for Nephrology &amp; Renal Transplantation (ASNRT)</span>
+        <span class="affil-pill"><span class="affil-dot" style="background:var(--gold);"></span>Journal of Renal Transplantation Science - Editor</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-label">Get in Touch</div>
+    <h2 class="section-title">Contact, Referrals<br/>&amp; <span class="italic">Collaboration</span></h2>
+    <div class="section-rule" style="background:linear-gradient(90deg,var(--gold),var(--gold-light));"></div>
+    <p style="color:var(--slate-light);max-width:620px;line-height:1.85;margin-bottom:52px;font-size:0.95rem;">
+      Professor Abbas welcomes enquiries from medical institutions, research collaborators, fellowship candidates, and healthcare organisations. For clinical referrals, academic partnership, or media requests, reach out via the form below or through the contact details listed.
+    </p>
+
+    <!-- ROW 1: Form (left) + Contact Info (right) -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;margin-bottom:48px;" class="contact-row-1">
+
+      <!-- LEFT: Message Form -->
+      <div class="form-wrap">
+        <div style="margin-bottom:26px;">
+          <div style="font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-light);margin-bottom:8px;">Direct &middot; Secure &middot; No Spam</div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.45rem;color:white;line-height:1.3;">Send a Message</h3>
+          <p style="font-size:0.84rem;color:var(--slate);margin-top:8px;line-height:1.65;">Your message is delivered directly to Prof. Abbas's inbox. He responds personally within 48 hours.</p>
+        </div>
+        <form action="https://formsubmit.co/Fedaeyabbas2009@gmail.com" method="POST" id="contact-form" onsubmit="handleFormSubmit(event)" style="display:flex;flex-direction:column;gap:18px;">
+          <input type="hidden" name="_captcha"  value="false"/>
+          <input type="hidden" name="_subject"  value="New message from Portfolio - Prof. Dr. Fedaei Abbas website"/>
+          <input type="hidden" name="_template" value="table"/>
+          <input type="hidden" name="_next"     value="" id="form-next"/>
+          <div>
+            <label class="form-label" for="fs-name">Full Name <span style="color:var(--gold);">*</span></label>
+            <input id="fs-name" class="form-input" type="text" name="name" required placeholder="e.g. Dr. Sarah Johnson"/>
+          </div>
+          <div>
+            <label class="form-label" for="fs-email">Email Address <span style="color:var(--gold);">*</span></label>
+            <input id="fs-email" class="form-input" type="email" name="email" required placeholder="your@email.com"/>
+          </div>
+          <div>
+            <label class="form-label" for="fs-message">Message <span style="color:var(--gold);">*</span></label>
+            <textarea id="fs-message" class="form-input" name="message" required placeholder="Please describe your enquiry - clinical referral, research collaboration, fellowship, or general correspondence..."></textarea>
+          </div>
+          <button type="submit" class="form-btn" id="form-btn">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            <span id="btn-label">Send Message</span>
+          </button>
+          <div class="form-success" id="form-success">
+            <div style="font-size:1.4rem;margin-bottom:8px;">&#9989;</div>
+            <p style="color:#6edbb8;font-size:0.88rem;font-weight:500;line-height:1.6;">Message sent successfully.<br/>Prof. Abbas will respond within 48 hours.</p>
+          </div>
+        </form>
+        <p style="font-size:0.65rem;color:rgba(255,255,255,0.2);text-align:center;margin-top:14px;line-height:1.6;">
+          Powered by <a href="https://formsubmit.co" target="_blank" style="color:rgba(100,168,216,0.4);text-decoration:none;">FormSubmit</a> &middot; Delivered directly to inbox &middot; No data retained
+        </p>
+      </div>
+
+      <!-- RIGHT: Quick Contact Info -->
+      <div>
+        <div style="margin-bottom:22px;">
+          <div style="font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-light);margin-bottom:8px;">Direct Contact</div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.45rem;color:white;line-height:1.3;">Quick Contact Info</h3>
+          <p style="font-size:0.84rem;color:var(--slate);margin-top:8px;line-height:1.65;">Reach Prof. Abbas directly through any of the following channels.</p>
+        </div>
+
+        <!-- WhatsApp row with official WhatsApp SVG icon and wa.me link -->
+        <div style="display:flex;align-items:center;gap:18px;padding:20px 22px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;margin-bottom:12px;transition:all 0.2s;" onmouseover="this.style.background='rgba(37,211,102,0.08)';this.style.borderColor='rgba(37,211,102,0.35)';" onmouseout="this.style.background='rgba(255,255,255,0.05)';this.style.borderColor='rgba(255,255,255,0.1)';">
+          <div style="width:44px;height:44px;border-radius:50%;background:rgba(37,211,102,0.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill="#25D366" d="M16.003 2.667C8.638 2.667 2.667 8.638 2.667 16c0 2.355.627 4.563 1.72 6.474L2.667 29.333l7.09-1.693A13.267 13.267 0 0016.003 29.333c7.365 0 13.33-5.97 13.33-13.333 0-7.362-5.965-13.333-13.33-13.333z"/>
+              <path fill="white" d="M22.485 19.616c-.306-.153-1.812-.894-2.092-.995-.28-.102-.484-.153-.688.153-.204.306-.79.995-.969 1.2-.178.204-.357.23-.663.077-.306-.154-1.292-.476-2.461-1.518-.91-.811-1.524-1.813-1.703-2.119-.178-.306-.019-.472.134-.624.137-.137.306-.357.459-.535.153-.178.204-.306.306-.51.102-.204.051-.382-.026-.535-.077-.153-.688-1.66-.943-2.273-.248-.597-.5-.516-.688-.526l-.587-.01c-.204 0-.535.077-.815.382-.28.306-1.07 1.045-1.07 2.549s1.096 2.957 1.249 3.161c.153.204 2.157 3.293 5.228 4.617.731.315 1.302.503 1.746.644.734.233 1.402.2 1.93.121.588-.088 1.812-.74 2.067-1.455.255-.714.255-1.327.178-1.455-.076-.128-.28-.204-.586-.357z"/>
+            </svg>
+          </div>
+          <div>
+            <div style="font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--slate-light);font-weight:600;margin-bottom:4px;">WhatsApp </div>
+            <a href="https://wa.me/96597529091" target="_blank" rel="noopener noreferrer" style="color:white;text-decoration:none;font-size:1rem;font-weight:500;letter-spacing:0.02em;display:inline-flex;align-items:center;gap:8px;">
+              +965 9752 9091
+              <span style="font-size:0.65rem;background:rgba(37,211,102,0.2);color:#25D366;border:1px solid rgba(37,211,102,0.35);border-radius:100px;padding:2px 8px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;">Chat Now</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Yahoo Email -->
+        <div style="display:flex;align-items:center;gap:18px;padding:20px 22px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;margin-bottom:12px;transition:all 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.08)';this.style.borderColor='rgba(100,168,216,0.3)';" onmouseout="this.style.background='rgba(255,255,255,0.05)';this.style.borderColor='rgba(255,255,255,0.1)';">
+          <div style="width:44px;height:44px;border-radius:50%;background:rgba(30,95,168,0.35);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="19" height="19" fill="none" stroke="var(--sky)" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <div style="font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--slate-light);font-weight:600;margin-bottom:4px;">Email (Yahoo)</div>
+            <a href="mailto:Fedaeyabbas2008@yahoo.com" style="color:white;text-decoration:none;font-size:0.9rem;font-weight:500;word-break:break-all;">Fedaeyabbas2008@yahoo.com</a>
+          </div>
+        </div>
+
+        <!-- Gmail -->
+        <div style="display:flex;align-items:center;gap:18px;padding:20px 22px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;margin-bottom:12px;transition:all 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.08)';this.style.borderColor='rgba(100,168,216,0.3)';" onmouseout="this.style.background='rgba(255,255,255,0.05)';this.style.borderColor='rgba(255,255,255,0.1)';">
+          <div style="width:44px;height:44px;border-radius:50%;background:rgba(30,95,168,0.35);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="19" height="19" fill="none" stroke="var(--sky)" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <div style="font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--slate-light);font-weight:600;margin-bottom:4px;">Email (Gmail)</div>
+            <a href="mailto:Fedaeyabbas2009@gmail.com" style="color:white;text-decoration:none;font-size:0.9rem;font-weight:500;word-break:break-all;">Fedaeyabbas2009@gmail.com</a>
+          </div>
+        </div>
+
+        <!-- Blog -->
+        <div style="display:flex;align-items:center;gap:18px;padding:20px 22px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;transition:all 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.08)';this.style.borderColor='rgba(100,168,216,0.3)';" onmouseout="this.style.background='rgba(255,255,255,0.05)';this.style.borderColor='rgba(255,255,255,0.1)';">
+          <div style="width:44px;height:44px;border-radius:50%;background:rgba(30,95,168,0.35);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="19" height="19" fill="none" stroke="var(--sky)" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+          </div>
+          <div>
+            <div style="font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--slate-light);font-weight:600;margin-bottom:4px;">Medical Blog</div>
+            <a href="https://www.fedokidney.com" target="_blank" style="color:white;text-decoration:none;font-size:0.9rem;font-weight:500;">www.fedokidney.com</a>
+          </div>
+        </div>
+      </div>
+    </div><!-- end ROW 1 -->
+
+    <!-- ROW 2: Academic & Professional References - Full Width -->
+    <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:48px;">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:28px;">
+        <div>
+          <div style="font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-light);margin-bottom:8px;">Upon Formal Request</div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.45rem;color:white;line-height:1.3;">Academic &amp; Professional References</h3>
+        </div>
+        <p style="font-size:0.83rem;color:var(--slate);max-width:380px;line-height:1.6;text-align:right;">Selected referees listed below with their consent. Full reference letters available upon request.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;" class="refs-grid">
+        <!-- Referee 1 -->
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:28px;position:relative;overflow:hidden;transition:all 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.07)';this.style.borderColor='rgba(100,168,216,0.25)';" onmouseout="this.style.background='rgba(255,255,255,0.04)';this.style.borderColor='rgba(255,255,255,0.09)';">
+          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--sky));"></div>
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
+            <div style="width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--blue-light));display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Playfair Display',serif;color:white;font-size:1rem;font-weight:700;">AH</div>
+            <div>
+              <h4 style="color:var(--gold-light);font-size:0.97rem;font-weight:600;line-height:1.3;">Mr. Ahmed Halawa</h4>
+              <div style="font-size:0.7rem;color:var(--sky);letter-spacing:0.08em;text-transform:uppercase;margin-top:2px;">Consultant Transplant Surgeon</div>
+            </div>
+          </div>
+          <div style="font-size:0.83rem;color:var(--slate);line-height:1.75;">
+            <p>Sheffield Teaching Hospital<br/>Herries Road, Sheffield S5 7AU<br/>United Kingdom</p>
+            <p style="margin-top:10px;">Tel: +44 7787 542128<br/>Fax: +44 114 271 4604</p>
+            <p style="margin-top:10px;"><a href="mailto:Ahmed.Halawa@liverpool.ac.uk" style="color:var(--sky);text-decoration:none;font-size:0.8rem;">Ahmed.Halawa@liverpool.ac.uk</a></p>
+            <p style="margin-top:8px;font-size:0.76rem;color:rgba(255,255,255,0.28);font-style:italic;">University of Liverpool &middot; Sheffield Teaching Hospitals NHS</p>
+          </div>
+        </div>
+        <!-- Referee 2 -->
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:28px;position:relative;overflow:hidden;transition:all 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.07)';this.style.borderColor='rgba(100,168,216,0.25)';" onmouseout="this.style.background='rgba(255,255,255,0.04)';this.style.borderColor='rgba(255,255,255,0.09)';">
+          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--sky));"></div>
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
+            <div style="width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--blue-light));display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Playfair Display',serif;color:white;font-size:1rem;font-weight:700;">TE</div>
+            <div>
+              <h4 style="color:var(--gold-light);font-size:0.97rem;font-weight:600;line-height:1.3;">Prof. Dr. Tarek El-Baz</h4>
+              <div style="font-size:0.7rem;color:var(--sky);letter-spacing:0.08em;text-transform:uppercase;margin-top:2px;">Professor of Nephrology</div>
+            </div>
+          </div>
+          <div style="font-size:0.83rem;color:var(--slate);line-height:1.75;">
+            <p>Professor of Nephrology &amp; Internal Medicine<br/>Al-Azhar University<br/>Cairo, Egypt</p>
+            <p style="margin-top:10px;">Mobile: +20 2 0123 157290</p>
+            <p style="margin-top:8px;font-size:0.76rem;color:rgba(255,255,255,0.28);font-style:italic;">Al-Azhar University &middot; Faculty of Medicine</p>
+          </div>
+        </div>
+        <!-- Referee 3 -->
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:28px;position:relative;overflow:hidden;transition:all 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.07)';this.style.borderColor='rgba(100,168,216,0.25)';" onmouseout="this.style.background='rgba(255,255,255,0.04)';this.style.borderColor='rgba(255,255,255,0.09)';">
+          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--sky));"></div>
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
+            <div style="width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--blue-light));display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Playfair Display',serif;color:white;font-size:1rem;font-weight:700;">WM</div>
+            <div>
+              <h4 style="color:var(--gold-light);font-size:0.97rem;font-weight:600;line-height:1.3;">Prof. Dr. Walid Masood</h4>
+              <div style="font-size:0.7rem;color:var(--sky);letter-spacing:0.08em;text-transform:uppercase;margin-top:2px;">Head of Nephrology Dept.</div>
+            </div>
+          </div>
+          <div style="font-size:0.83rem;color:var(--slate);line-height:1.75;">
+            <p>Head of Nephrology Department<br/>Ahmed Maher Teaching Hospital<br/>Cairo, Egypt</p>
+            <p style="margin-top:10px;">Mobile: +20 2 0101 410017</p>
+            <p style="margin-top:10px;"><a href="mailto:waleedmassoud@gmail.com" style="color:var(--sky);text-decoration:none;font-size:0.8rem;">waleedmassoud@gmail.com</a></p>
+            <p style="margin-top:8px;font-size:0.76rem;color:rgba(255,255,255,0.28);font-style:italic;">GOITH &middot; Ahmed Maher Teaching Hospital</p>
+          </div>
+        </div>
+      </div><!-- end refs-grid -->
+    </div><!-- end ROW 2 -->
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p style="margin-bottom:6px;"><span style="font-family:'Playfair Display',serif;font-size:0.95rem;color:rgba(255,255,255,0.65);">Prof. Dr. Fedaei Mohamed El-Sayed Abbas</span></p>
+    <p>Consultant Nephrologist &middot; Head of Nephrology &amp; Hemodialysis &middot; Ahmed Maher Teaching Hospital, Cairo, Egypt</p>
+    <p style="margin-top:10px;font-size:0.74rem;color:#2a3a4a;">&copy; 2025 All rights reserved. Designed for professional academic use.</p>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',function(){
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>60);
+});
+var obs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible');});
+},{threshold:0.1});
+document.querySelectorAll('.fade-in').forEach(function(el){obs.observe(el);});
+function filterPubs(cat,btn){
+  document.querySelectorAll('#pub-filters .filter-btn').forEach(function(b){b.classList.remove('active');});
+  btn.classList.add('active');
+  document.querySelectorAll('#pub-list .pub-item').forEach(function(item){
+    var cats=item.dataset.cat||'';
+    item.style.display=(cat==='all'||cats.includes(cat))?'':'none';
+  });
+}
+(function(){
+  var nxt=document.getElementById('form-next');
+  if(nxt) nxt.value=window.location.href.split('?')[0]+'?sent=1';
+  if(window.location.search.includes('sent=1')){
+    var s=document.getElementById('form-success');
+    var f=document.getElementById('contact-form');
+    if(s) s.style.display='block';
+    if(f) f.querySelectorAll('input:not([type=hidden]),textarea,button').forEach(function(el){el.style.display='none';});
+    setTimeout(function(){var c=document.getElementById('contact');if(c)c.scrollIntoView({behavior:'smooth'});},300);
+  }
+})();
+function handleFormSubmit(e){
+  var btn=document.getElementById('form-btn');
+  var lbl=document.getElementById('btn-label');
+  if(btn){btn.disabled=true;btn.style.opacity='0.7';}
+  if(lbl) lbl.textContent='Sending...';
+}
+</script>
+</body>
+</html>
